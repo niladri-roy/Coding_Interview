@@ -41,11 +41,18 @@ TreeNode *buildTree(TreeNode *root)
 
 void LevelOrderRecursive(TreeNode *root, vector<vector<int>> &ans, int height)
 {
-    vector<int> tempAns;
-    if(root == NULL) return;
+    if (root == NULL)
+        return;
+    if (height >= ans.size())
+    {
+        vector<int> temp;
+        ans.push_back(temp);
+    }
 
-    
-    
+    ans.at(height).push_back(root->data);
+
+    LevelOrderRecursive(root->left, ans, height + 1);
+    LevelOrderRecursive(root->right, ans,  height + 1);
 }
 
 vector<vector<int>> LevelOrderIterative(TreeNode *root)
@@ -84,6 +91,7 @@ vector<vector<int>> LevelOrderIterative(TreeNode *root)
 
 void Print1D(vector<vector<int>> toPrint)
 {
+    cout << "answer: " << endl;
     int n = toPrint.size();
 
     for (int i = 0; i < n; i++)
@@ -106,7 +114,7 @@ int main()
     // 1 3 7 -1 -1 11 -1 -1 5 17 -1 -1 -1
 
     vector<vector<int>> ans1;
-    LevelOrderRecursive(root, ans1, 1);
+    LevelOrderRecursive(root, ans1, 0);
     Print1D(ans1);
 
     vector<vector<int>> ans2 = LevelOrderIterative(root);
