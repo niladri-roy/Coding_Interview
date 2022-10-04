@@ -24,6 +24,8 @@ using namespace std;
 /*
 Solution 1: Using Sort Library Function
 ---- Don't Use this in LeetCode ----
+Time Complexity: O(N log N)
+Space Complexity: O(1)
 */
 void simpleSorting(vector<int> &arr1, int  n)
 {
@@ -31,8 +33,10 @@ void simpleSorting(vector<int> &arr1, int  n)
 }
 /*
 Solution 2: Keep Count of 0's , 1's and 2's
-Intuition: 
+Intuition:
 Keep Counts of 0s 1s and 2s and put them in separate vector in order.
+Time Complexity: O(N^N)
+Space Complexity: O(N)
 */
 vector<int> countOfNumbers(vector<int> &arr2, int n)
 {
@@ -87,18 +91,21 @@ Intuition behind DNF?
 We need to arrange or segregate three different staffs in a order.
 
 Application
-The Dutch National Flag Algorithm can be used in implementing Quicksort efficiently for inputs with majorly 
-repeated elements. Quicksort exhibits its worst-case performance in such inputs taking O(n^2) time. 
-The Dutch National Flag Algorithm with its 3-Way Partitioning method can help resolve the partition routine 
+The Dutch National Flag Algorithm can be used in implementing Quicksort efficiently for inputs with majorly
+repeated elements. Quicksort exhibits its worst-case performance in such inputs taking O(n^2) time.
+The Dutch National Flag Algorithm with its 3-Way Partitioning method can help resolve the partition routine
 separating the values into three groups:
 
 - The values less than the pivot,
 - The values equal to the pivot,
 - And, the values are greater than the pivot.
 
-This linear-time partition routine is similar to 3–way partitioning 
-for the Dutch national flag problem. This will make Quicksort work efficiently in O(n) time for inputs 
+This linear-time partition routine is similar to 3–way partitioning
+for the Dutch national flag problem. This will make Quicksort work efficiently in O(n) time for inputs
 having identical values.
+
+Time Complexity: O(N)
+Space Complexity: O(1)
 */
 void DutchNationalFlag (vector<int> &arr3, int n)
 {
