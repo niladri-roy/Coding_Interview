@@ -31,19 +31,19 @@ The growth of running time will be very large as n becomes larger.
 #include<bits/stdc++.h>
 using namespace std;
 
-void selectionSort (vector<int> &arr,int n)
+void selectionSort (vector<int> &nums,int n)
 {
     for(int i=0; i<n; i++)
     {
         int mini = i;
         for(int j=i+1; j<n; j++)
         {
-            if(arr[mini] > arr[j])
+            if(nums[mini] > nums[j])
             {
                 mini = j;
             }
         }
-        swap(arr[mini], arr[i]);
+        swap(nums[mini], nums[i]);
     }
 }
 
@@ -53,16 +53,16 @@ int main()
     cout << "Enter the size of the array " ;
     cin >> n;
 
-    vector<int> arr(n, 0);
+    vector<int> nums(n, 0);
     for(int i=0; i<n; i++)
     {
-        cin >> arr[i];
+        cin >> nums[i];
     }
 
-    selectionSort(arr, n);
+    selectionSort(nums, n);
     for(int i=0; i<n; i++)
     {
-        cout << arr[i] << " ";
+        cout << nums[i] << " ";
     }
     cout << endl;
 
